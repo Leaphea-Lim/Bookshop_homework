@@ -14,6 +14,7 @@ body {
   background: #f9f9f9;
   color: #333;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -24,6 +25,11 @@ header {
   margin: 20px;
   border-radius: 50px;
 }
+/* .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
 header .logo {
   display: flex;
   align-items: center;
@@ -110,14 +116,24 @@ nav a {
 
 /* search bar */
 .search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   position: relative;
   width: 200px;
 }
-.search-btn {
+/* .search-btn {
   display: flex;
   gap: 20px;
   padding: 0 10px;
+} */
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
+
 .card-shop i {
   position: absolute;
   top: 50px;
@@ -256,21 +272,21 @@ h2 {
   flex-wrap: wrap;
 }
 
-.category-author img{
+.category-author img {
   width: 50px;
   height: 50px;
   border-radius: 90%;
 }
-.category .book-card{
+.category .book-card {
   width: 200px;
   font-size: 14px;
 }
-.category .book-card img{
+.category .book-card img {
   width: 130px;
   height: 150px;
   border-radius: 10px;
 }
-.category h3{
+.category h3 {
   font-size: 16px;
 }
 
@@ -353,7 +369,6 @@ footer {
 }
 
 .buy-btn {
- 
   justify-content: center;
   margin-top: 10px;
   padding: 5px 10px;
@@ -366,7 +381,7 @@ footer {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-.button{
+.button {
   display: flex;
   justify-content: center;
 
@@ -376,4 +391,111 @@ footer {
 button:hover {
   background-color: #00203f;
   color: rgb(255, 214, 0);
+}
+/* Responsive styles */
+@media screen and (max-width: 775px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-btn {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-shop i {
+    position: relative;
+    top: 5px;
+  }
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 10px;
+    margin: 10px;
+  }
+  .logo span:last-child {
+    font-size: 1.2rem;
+  }
+  .search input {
+    width: 100%;
+    padding: 8px 8px 8px 40px;
+  }
+  .hero-image img {
+    max-width: 100%;
+  }
+  .author-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .card img {
+    width: 96px;
+    height: 96px;
+  }
+  .card-shop i {
+    position: relative;
+    top: 5px;
+  }
+  .search-btn {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me-title {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-me-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me img {
+    width: 100%;
+    max-width: 300;
+  }
+
+  /* Hero background fix */
+  .hero {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/asset/blue-moon.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  /* Ensure .search-btn is flex by default */
+  .search-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 }
